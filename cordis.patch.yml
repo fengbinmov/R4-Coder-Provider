@@ -1,0 +1,16 @@
+# dsh-r4-coder-account bundle layer.
+# One plugin row: serves the R4 Coder account card under Settings → R4 Coder.
+# `name` must be the FULL package specifier as installed in the profile's
+# node_modules; quote it, because a YAML scalar starting with `@` fails to parse.
+- insert:
+    - id: r4-coder-account
+      name: "dsh-r4-coder-account"
+      config:
+        # Credential reference resolved through the harness credentials service
+        # (settings.yaml / .credentials.yaml). Falls back to the process
+        # environment, then to R4_API_KEY.
+        apiKeyEnv: R4_CODES_API_KEY
+        # R4 Coder API root; the account endpoints live under /v1/cli/.
+        baseURL: https://api.r4.codes
+        # Per-request timeout for the account lookups.
+        timeoutMs: 15000

@@ -1,0 +1,46 @@
+{
+  "name": "dsh-r4-coder-account",
+  "version": "0.1.0",
+  "description": "R4 Coder (r4.codes) account card for DeepSeek Harness: plan balance, wallet, today's spend and 7-day usage in Settings → R4 Coder.",
+  "keywords": [
+    "deepseek-harness",
+    "dsh",
+    "dsh-plugin",
+    "r4-coder",
+    "r4.codes",
+    "balance",
+    "usage",
+    "quota"
+  ],
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": {
+      "default": "./lib/index.js"
+    },
+    "./client": {
+      "default": "./lib/client.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "inject": [
+        "@deepseek-ai/dsh-client-connection",
+        "@deepseek-ai/dsh-client-ui-slots",
+        "@deepseek-ai/dsh-client-locale",
+        "@deepseek-ai/dsh-client-ui-settings"
+      ],
+      "platform": "web"
+    }
+  },
+  "files": [
+    "lib",
+    "cordis.patch.yml",
+    "README.md"
+  ],
+  "license": "MIT"
+}
