@@ -4,6 +4,10 @@
 
 界面与 `@mars-sea/dsh-commandcode-provider` 的设置页同一形态：一个独立的 `settings.section` 页面，卡片式布局。
 
+## 界面预览
+
+![设置 → R4 Coder 的账户卡片](src/yulantu.png)
+
 ## 数据来源
 
 插件不猜、不抓网页，用的是 R4 Coder 自己 CLI（`r4 usage` / `r4 status`）所依赖的两个账户接口：
